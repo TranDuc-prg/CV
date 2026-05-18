@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Trần Việt Đức - CV Công Nghệ Chuyển Động</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-navy: #0a0f1c;
+            --teal-tech: #0d9488;
+            --teal-glow: #2dd4bf;
+            --dark-slate: #1e293b;
+            --text-light-slate: #94a3b8;
+            --card-white: #ffffff;
+            --bg-soft: #f1f5f9;
+            --transition-smooth: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            color: #0f172a;
+            line-height: 1.5;
+            padding: 40px 24px;
+            scroll-behavior: smooth;
+            position: relative;
+            background: #050914;
+            overflow-x: hidden;
+        }
+
+        /* ========== NỀN CÔNG NGHỆ CHUYỂN ĐỘNG ========== */
+        .tech-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .animated-gradient {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(125deg, 
+                #0a0f1c 0%, 
+                #0a1927 25%, 
+                #0d2b2e 50%, 
+                #1a1a2e 75%, 
+                #0a0f1c 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 12s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .matrix-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.12;
+            pointer-events: none;
+        }
+
+        .matrix-rain span {
+            position: absolute;
+            color: #2dd4bf;
+            font-family: monospace;
+            font-size: 14px;
+            white-space: pre;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from { transform: translateY(-100vh); opacity: 1; }
+            to { transform: translateY(100vh); opacity: 0; }
+        }
+
+        .light-orb {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(13,148,136,0.3) 0%, rgba(13,148,136,0) 70%);
+            filter: blur(40px);
+            animation: floatOrb 18s ease-in-out infinite;
+        }
+
+        .light-orb:nth-child(1) {
+            width: 500px;
+            height: 500px;
+            top: -200px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .light-orb:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            bottom: -150px;
+            right: -80px;
+            animation-delay: -4s;
+            background: radial-gradient(circle, rgba(45,212,191,0.2) 0%, rgba(45,212,191,0) 70%);
+        }
+
+        .light-orb:nth-child(3) {
+            width: 350px;
+            height: 350px;
+            top: 40%;
+            left: 60%;
+            animation-delay: -8s;
+            background: radial-gradient(circle, rgba(13,148,136,0.15) 0%, rgba(13,148,136,0) 70%);
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        .grid-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(13,148,136,0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(13,148,136,0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+
+        .glitch-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2dd4bf, #0d9488, #2dd4bf, transparent);
+            opacity: 0;
+            animation: glitchFlash 4s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes glitchFlash {
+            0%, 95%, 100% { opacity: 0; transform: translateY(0); }
+            96% { opacity: 0.6; transform: translateY(20vh); }
+            97% { opacity: 0; transform: translateY(40vh); }
+            98% { opacity: 0.8; transform: translateY(60vh); }
+            99% { opacity: 0; transform: translateY(80vh); }
+        }
+
+        .scan-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                rgba(13,148,136,0.03) 50%, 
+                transparent 100%);
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(45,212,191,0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFloat linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ========== CV CONTAINER ========== */
+        .cv-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            animation: fadeSlideUp 0.6s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeSlideUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .cv-container {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(2px);
+            border-radius: 32px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 34% 66%;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(45,212,191,0.2);
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(45,212,191,0.2);
+        }
+
+        /* LEFT COLUMN */
+        .left-column {
+            background: rgba(10, 15, 28, 0.95);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 40px 26px;
+            position: relative;
+            z-index: 2;
+            transition: var(--transition-smooth);
+            border-right: 1px solid rgba(45,212,191,0.2);
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 32px;
+            border-bottom: 1px solid rgba(45, 212, 191, 0.25);
+            padding-bottom: 24px;
+            position: relative;
+        }
+
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid var(--teal-tech);
+            object-fit: cover;
+            margin-bottom: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            animation: avatarGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes avatarGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(13,148,136,0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(13,148,136,0.1); }
+        }
+
+        .avatar:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.5);
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #fff 30%, #2dd4bf 80%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            background: rgba(45, 212, 191, 0.2);
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 40px;
+            color: #2dd4bf;
+            backdrop-filter: blur(4px);
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-left: 3px solid var(--teal-tech);
+            padding-left: 12px;
+            margin: 28px 0 16px 0;
+            color: #f1f5f9;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            font-size: 13px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.2s;
+        }
+
+        .contact-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-list i {
+            color: #2dd4bf;
+            width: 18px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .contact-list a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-list a:hover {
+            color: #2dd4bf;
+            text-decoration: underline;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 16px;
+        }
+
+        .skill-name {
+            font-size: 12px;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+            color: #cbd5e1;
+        }
+
+        .skill-bar {
+            background: rgba(255,255,255,0.12);
+            height: 6px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            background: linear-gradient(90deg, #0d9488, #2dd4bf);
+            width: 0%;
+            height: 100%;
+            border-radius: 12px;
+            transition: width 1s ease-out;
+        }
+
+        .cert-item {
+            font-size: 12.5px;
+            margin-bottom: 10px;
+            color: #cbd5e6;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cert-item i {
+            color: var(--teal-glow);
+            font-size: 12px;
+        }
+
+        /* RIGHT COLUMN */
+        .right-column {
+            padding: 44px 38px;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .section {
+            margin-bottom: 32px;
+            transition: var(--transition-smooth);
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary-navy);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #eef2ff;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .section-title i {
+            color: var(--teal-tech);
+            font-size: 18px;
+        }
+
+        .objective-text {
+            font-size: 14px;
+            color: #1e293b;
+            line-height: 1.6;
+            text-align: justify;
+            background: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 20px;
+            border-left: 4px solid var(--teal-tech);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px dashed #cbd5e1;
+            margin-bottom: 32px;
+            transition: all 0.2s;
+        }
+
+        .timeline-item:hover {
+            border-left-color: var(--teal-tech);
+            background: linear-gradient(90deg, rgba(13,148,136,0.02) 0%, rgba(255,255,255,0) 95%);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            background: var(--teal-tech);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(13,148,136,0.2);
+            transition: 0.2s;
+        }
+
+        .timeline-item:hover::before {
+            transform: scale(1.2);
+            background: #2dd4bf;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
+        }
+
+        .job-title, .edu-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .timeline-date {
+            font-size: 12px;
+            font-weight: 500;
+            background: #eef2ff;
+            padding: 2px 10px;
+            border-radius: 20px;
+            color: #0d9488;
+        }
+
+        .company-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--teal-tech);
+            margin-bottom: 8px;
+        }
+
+        .timeline-content {
+            font-size: 13.5px;
+            color: #334155;
+        }
+
+        .timeline-content ul {
+            padding-left: 18px;
+            margin-top: 6px;
+        }
+
+        .timeline-content li {
+            margin-bottom: 5px;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: #eef2ff;
+            color: #0f172a;
+            padding: 3px 12px;
+            border-radius: 24px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 8px;
+            margin-right: 6px;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .tech-badge:hover {
+            background: var(--teal-tech);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .demo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #0d9488, #0f172a);
+            color: white;
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(45,212,191,0.3);
+        }
+
+        .demo-link i {
+            font-size: 14px;
+        }
+
+        .demo-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(13,148,136,0.4);
+            background: linear-gradient(135deg, #2dd4bf, #0d9488);
+        }
+
+        /* ========== NÚT XUẤT CV ========== */
+        .export-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+            flex-direction: column;
+        }
+
+        .btn-export {
+            background: linear-gradient(135deg, #0d9488, #0a0f1c);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 40px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 1px solid rgba(45,212,191,0.3);
+        }
+
+        .btn-export:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(13,148,136,0.4);
+            background: linear-gradient(135deg, #2dd4bf, #0d9488);
+        }
+
+        .btn-export i {
+            font-size: 16px;
+        }
+
+        .toast-message {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0d9488;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 200;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .toast-message.show {
+            opacity: 1;
+        }
+
+        @media (max-width: 780px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+                border-radius: 24px;
+            }
+            body {
+                padding: 16px;
+            }
+            .right-column {
+                padding: 30px 20px;
+            }
+            .left-column {
+                padding: 30px 20px;
+            }
+            .export-buttons {
+                bottom: 20px;
+                right: 20px;
+                flex-direction: row;
+            }
+            .btn-export {
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+        }
+
+        /* Print optimization cho xuất PDF */
+        @media print {
+            .tech-bg, .export-buttons, .scan-line, .glitch-line, .matrix-rain, .light-orb, .grid-overlay {
+                display: none !important;
+            }
+            body {
+                background: white;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+                background: white;
+            }
+            .left-column {
+                background: #0a0f1c;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .skill-progress {
+                background: #0d9488 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NỀN CÔNG NGHỆ CHUYỂN ĐỘNG -->
+<div class="tech-bg">
+    <div class="animated-gradient"></div>
+    <div class="grid-overlay"></div>
+    <div class="light-orb"></div>
+    <div class="light-orb"></div>
+    <div class="light-orb"></div>
+    <div class="matrix-rain" id="matrixRain"></div>
+    <div class="scan-line"></div>
+    <div class="glitch-line"></div>
+    <div class="glitch-line" style="animation-delay: 1.5s;"></div>
+    <div class="glitch-line" style="animation-delay: 3s;"></div>
+</div>
+
+<!-- NÚT XUẤT CV -->
+<div class="export-buttons">
+    <button class="btn-export" id="exportPDFBtn">
+        <i class="fa-solid fa-file-pdf"></i> Xuất CV (PDF)
+    </button>
+    <button class="btn-export" id="copyLinkBtn">
+        <i class="fa-solid fa-share-alt"></i> Sao chép link
+    </button>
+</div>
+
+<!-- Toast thông báo -->
+<div id="toast" class="toast-message"></div>
+
+<div class="cv-wrapper">
+    <div class="cv-container" id="cvContent">
+        
+        <aside class="left-column">
+            <div class="profile-section">
+                <img src="c:\Users\ADMIN\OneDrive\Desktop\Hình ảnh\Screenshots\Ảnh chụp màn hình 2026-05-18 235152.png" alt="Avatar Đức" class="avatar">
+                <h1 class="name">Trần Việt Đức</h1>
+                <span class="title">Software & Web Developer</span>
+            </div>
+
+            <h2 class="sidebar-title">Liên hệ</h2>
+            <ul class="contact-list">
+                <li><i class="fa-solid fa-phone"></i> <span>0366 388 104</span></li>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:tduc45310@email.com">tduc45310@email.com</a></li>
+                <li><i class="fa-solid fa-location-dot"></i> <span>Hà Nội, Việt Nam</span></li>
+                <li><i class="fa-solid fa-globe"></i> <a href="#" target="_blank">Portfolio Thủ Công Việt</a></li>
+                <li><i class="fa-solid fa-store"></i> <a href="#" target="_blank">Website Nhà Thuốc</a></li>
+                <li><i class="fa-brands fa-github"></i> <a href="#" target="_blank">github.com/TranDuc-prg</a></li>
+            </ul>
+
+            <h2 class="sidebar-title">Kỹ năng cốt lõi</h2>
+            <ul class="skills-list">
+                <li><span class="skill-name">Python & PyQt6 (GUI Dev)</span><div class="skill-bar"><div class="skill-progress" data-width="90"></div></div></li>
+                <li><span class="skill-name">C# & WinForms / .NET</span><div class="skill-bar"><div class="skill-progress" data-width="85"></div></div></li>
+                <li><span class="skill-name">Java & Android SDK</span><div class="skill-bar"><div class="skill-progress" data-width="80"></div></div></li>
+                <li><span class="skill-name">JavaScript (ES6+) & Firebase</span><div class="skill-bar"><div class="skill-progress" data-width="85"></div></div></li>
+                <li><span class="skill-name">HTML5, CSS3, Bootstrap 5</span><div class="skill-bar"><div class="skill-progress" data-width="88"></div></div></li>
+                <li><span class="skill-name">MySQL & SQL Server / Firebase</span><div class="skill-bar"><div class="skill-progress" data-width="80"></div></div></li>
+            </ul>
+
+            <h2 class="sidebar-title">Công cụ & Quy trình</h2>
+            <div class="cert-item"><i class="fa-brands fa-git-alt"></i> Git / GitHub & Hosting (InfinityFree, Pages)</div>
+            <div class="cert-item"><i class="fa-solid fa-code-branch"></i> OOP & Thiết kế cấu trúc DB</div>
+            <div class="cert-item"><i class="fa-solid fa-mobile-screen-button"></i> UI/UX Responsive, Desktop & Mobile</div>
+            <div class="cert-item"><i class="fa-solid fa-cloud-arrow-up"></i> CI/CD cơ bản & Deploy tự động</div>
+        </aside>
+
+        <main class="right-column">
+            <section class="section">
+                <h2 class="section-title"><i class="fa-solid fa-bullseye"></i> Mục tiêu nghề nghiệp</h2>
+                <p class="objective-text">
+                    Là sinh viên CNTT có tư duy lập trình vững vàng & kinh nghiệm xây dựng hệ thống thực tế (Desktop, Mobile, Web). Định hướng áp dụng thiết kế UI/UX, xử lý logic client-side và tối ưu CSDL để tạo sản phẩm mượt mà. Mong muốn phát triển thành Kỹ sư phần mềm toàn diện, mang lại giá trị đột phá.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Dự án phần mềm xuất sắc</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="job-title">Hệ Thống Quản Lý Sân Bóng Mini</h3>
+                        <span class="timeline-date">04/2026 - 05/2026</span>
+                    </div>
+                    <p class="company-name">Dự án Desktop WinForms (Phát triển chính)</p>
+                    <div class="timeline-content">
+                        Giải pháp quản lý đặt sân, dịch vụ và doanh thu tự động.
+                        <ul>
+                            <li><strong>Giao diện:</strong> C# WinForms + Guna UI, hiển thị sơ đồ sân real-time.</li>
+                            <li><strong>Module nghiệp vụ:</strong> Tính tiền tự động theo giờ cao điểm, quản lý kho dịch vụ, xuất hóa đơn.</li>
+                            <li><strong>Database:</strong> SQL Server + MySQL, tối ưu booking & khách hàng thân thiết.</li>
+                        </ul>
+                        <span class="tech-badge">C#</span><span class="tech-badge">.NET WinForms</span><span class="tech-badge">SQL Server</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="job-title">Game Flappy Bird - Android</h3>
+                        <span class="timeline-date">05/2026</span>
+                    </div>
+                    <p class="company-name">Ứng dụng di động (Phát triển chính)</p>
+                    <div class="timeline-content">
+                        Game giải trí full tính năng, kết nối Firebase.
+                        <ul>
+                            <li>Xử lý Custom View Canvas, thuật toán va chạm & trọng lực mượt.</li>
+                            <li>Quản lý màn chơi qua RecyclerView + Realtime Database đồng bộ.</li>
+                            <li>Xác thực Firebase Auth & Bảng xếp hạng online.</li>
+                        </ul>
+                        <div style="margin-top: 10px;">
+                            <a href="https://www.tiktok.com/@ctrno31/video/7549311026907335943" target="_blank" class="demo-link">
+                                <i class="fa-brands fa-tiktok"></i> Xem Demo Game trên TikTok
+                            </a>
+                        </div>
+                        <span class="tech-badge">Java</span><span class="tech-badge">Android SDK</span><span class="tech-badge">Firebase Auth</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="job-title">Website Thủ Công Việt (E-commerce)</h3>
+                        <span class="timeline-date">10/2025 - 12/2025</span>
+                    </div>
+                    <p class="company-name">Dự án Web TMĐT (Phát triển chính)</p>
+                    <div class="timeline-content">
+                        Xây dựng nền tảng bán hàng gốm sứ, tranh thêu.
+                        <ul>
+                            <li><strong>UI/UX:</strong> Giao diện Responsive, giỏ hàng, thanh toán chi tiết.</li>
+                            <li><strong>Admin Dashboard:</strong> Quản lý sản phẩm, danh mục, thống kê.</li>
+                            <li><strong>Firebase Realtime DB:</strong> Lưu trữ sản phẩm, đơn hàng, phân quyền user.</li>
+                        </ul>
+                        <span class="tech-badge">HTML5/CSS3</span><span class="tech-badge">JavaScript</span><span class="tech-badge">Firebase</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="job-title">Website Nhà Thuốc GPP</h3>
+                        <span class="timeline-date">03/2026</span>
+                    </div>
+                    <p class="company-name">Hệ thống Quản lý Dược phẩm (Thành viên)</p>
+                    <div class="timeline-content">
+                        Web hiển thị danh mục thuốc, mỹ phẩm & tư vấn trực tuyến.
+                        <ul>
+                            <li>Bootstrap 5, font hiện đại, tương thích di động tối ưu.</li>
+                            <li>Tích hợp form liên hệ tư vấn dược sĩ, tối ưu tốc độ client.</li>
+                        </ul>
+                        <span class="tech-badge">Bootstrap 5</span><span class="tech-badge">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="job-title">Phần mềm Quản lý Cửa hàng Ăn vặt</h3>
+                        <span class="timeline-date">01/2026 - 04/2026</span>
+                    </div>
+                    <p class="company-name">Desktop App (PyQt6 + MySQL)</p>
+                    <div class="timeline-content">
+                        Ứng dụng quản lý bán hàng toàn diện, Dashboard cao cấp.
+                        <ul>
+                            <li>PyQt6 thiết kế giao diện bo tròn, quản lý đăng nhập, chấm công.</li>
+                            <li>Bán hàng tự động trừ kho, lập hóa đơn và lưu vào MySQL.</li>
+                        </ul>
+                        <span class="tech-badge">Python</span><span class="tech-badge">PyQt6</span><span class="tech-badge">MySQL</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Học vấn & Đào tạo</h2>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="edu-title">Công nghệ thông tin - Đại học Công nghệ Đông Á</h3>
+                        <span class="timeline-date">2022 - 2026</span>
+                    </div>
+                    <p class="company-name">EAUT | GPA: 3.03/4.0</p>
+                    <div class="timeline-content">
+                        Kiến thức chuyên sâu: CTDL&GT, Thiết kế hệ thống, OOP, Quản trị CSDL (SQL Server, MySQL, Firebase). Nghiên cứu và phát triển nhiều dự án thực tế.
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<script>
+    // Tạo hiệu ứng mưa số ma trận
+    function createMatrixRain() {
+        const container = document.getElementById('matrixRain');
+        if (!container) return;
+        
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        
+        for (let i = 0; i < 80; i++) {
+            const span = document.createElement('span');
+            const duration = 4 + Math.random() * 8;
+            const left = Math.random() * 100;
+            const delay = Math.random() * 10;
+            const fontSize = 10 + Math.random() * 12;
+            
+            let text = '';
+            for (let j = 0; j < 15; j++) {
+                text += chars[Math.floor(Math.random() * chars.length)];
+            }
+            
+            span.textContent = text;
+            span.style.left = left + '%';
+            span.style.fontSize = fontSize + 'px';
+            span.style.animationDuration = duration + 's';
+            span.style.animationDelay = delay + 's';
+            span.style.opacity = 0.1 + Math.random() * 0.2;
+            
+            container.appendChild(span);
+        }
+    }
+    
+    // Tạo particle chuyển động
+    function createParticles() {
+        const bg = document.querySelector('.tech-bg');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = 2 + Math.random() * 4;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = 8 + Math.random() * 12 + 's';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.opacity = 0.3 + Math.random() * 0.5;
+            bg.appendChild(particle);
+        }
+    }
+    
+    // Hiển thị toast thông báo
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2500);
+    }
+    
+    // Animation skill bars
+    document.addEventListener("DOMContentLoaded", function() {
+        createMatrixRain();
+        createParticles();
+        
+        const skillBars = document.querySelectorAll('.skill-progress');
+        
+        skillBars.forEach(bar => {
+            const w = bar.getAttribute('data-width');
+            if(w) bar.style.width = '0%';
+        });
+        
+        const observerOptions = { threshold: 0.2 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList && entry.target.classList.contains('skill-progress')) {
+                        const widthVal = entry.target.getAttribute('data-width');
+                        if (widthVal && entry.target.style.width !== widthVal+'%') {
+                            entry.target.style.width = widthVal + '%';
+                        }
+                    }
+                    if (entry.target.classList && entry.target.classList.contains('timeline-item')) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                    if(entry.target.classList && entry.target.classList.contains('skill-progress')) {
+                        observer.unobserve(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        skillBars.forEach(bar => {
+            observer.observe(bar);
+        });
+        
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        timelineItems.forEach((item) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-8px)';
+            item.style.transition = 'opacity 0.4s ease, transform 0.3s ease, border-left-color 0.2s';
+            observer.observe(item);
+        });
+        
+        setTimeout(() => {
+            skillBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    const widthVal = bar.getAttribute('data-width');
+                    if (widthVal && bar.style.width !== widthVal+'%') bar.style.width = widthVal + '%';
+                }
+            });
+            timelineItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80) {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }
+            });
+        }, 200);
+        
+        // ========== CHỨC NĂNG XUẤT PDF ==========
+        const exportBtn = document.getElementById('exportPDFBtn');
+        if (exportBtn) {
+            exportBtn.addEventListener('click', function() {
+                const element = document.getElementById('cvContent');
+                const originalOverflow = document.body.style.overflow;
+                document.body.style.overflow = 'auto';
+                
+                const opt = {
+                    margin: [0.5, 0.5, 0.5, 0.5],
+                    filename: 'CV_TranVietDuc.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+                    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                };
+                
+                showToast('Đang xuất CV, vui lòng chờ...');
+                
+                html2pdf().set(opt).from(element).save().then(() => {
+                    document.body.style.overflow = originalOverflow;
+                    showToast('✅ Xuất PDF thành công!');
+                }).catch(() => {
+                    document.body.style.overflow = originalOverflow;
+                    showToast('❌ Có lỗi xảy ra, vui lòng thử lại');
+                });
+            });
+        }
+        
+        // ========== CHỨC NĂNG SAO CHÉP LINK ==========
+        const copyLinkBtn = document.getElementById('copyLinkBtn');
+        if (copyLinkBtn) {
+            copyLinkBtn.addEventListener('click', function() {
+                const url = window.location.href;
+                navigator.clipboard.writeText(url).then(() => {
+                    showToast('🔗 Đã sao chép link CV vào clipboard!');
+                }).catch(() => {
+                    showToast('❌ Không thể sao chép link');
+                });
+            });
+        }
+        
+        console.log("✅ CV Công Nghệ - Đã thêm chức năng Xuất PDF và Copy Link!");
+    });
+    
+    // Resize matrix khi thay đổi kích thước cửa sổ
+    window.addEventListener('resize', () => {
+        const container = document.getElementById('matrixRain');
+        if (container) {
+            container.innerHTML = '';
+            createMatrixRain();
+        }
+    });
+</script>
+</body>
+</html>
